@@ -1,3 +1,5 @@
+<?php include 'config.php'; ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -20,6 +22,29 @@
 
 	<body>
 
+	<!-- inserted CREATE database code -->
+	<?php
+include 'config.php';
+include 'opendb.php';
+$query  = 'CREATE DATABASE eployee';
+$result = mysql_query($query);
+mysql_select_db('image_db') or die('Cannot select database');
+$query = 'CREATE TABLE upload (
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(30) NOT NULL,
+type VARCHAR(30) NOT NULL,
+size INT NOT NULL,
+content MEDIUMBLOB NOT NULL,
+PRIMARY KEY(id)
+)';
+$result = mysql_query($query);
+include 'closedb.php';
+?>
+	<!-- end of inserted Create database code -->
+	
+	<!-- images uploader script -->
+	<?php include 'images-uploader.php'; ?>
+	<!-- END of images uploader script -->
 		<div id="wrapper">
 
 <?php include('includes/header.php'); ?>
@@ -63,8 +88,6 @@ Quisque pellentesque sodales aliquam. Morbi mollis neque eget arcu egestas non u
 </p>
 
 </div> <!-- end #content -->
-
-<?php include('includes/sidebar.php'); ?>
 
 <?php include('includes/footer.php'); ?>
 
