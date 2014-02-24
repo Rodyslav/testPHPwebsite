@@ -1,7 +1,7 @@
 <?php
 
-$heading='1stWebDesigner PHP Template';
+$heading='my test PHP Template';
 
-$footer='Copyright &copy; 2010 1stWebDesigner PHP Template';
+$footer='a nice PHP Template';
 
 ?>

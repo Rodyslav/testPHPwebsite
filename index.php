@@ -16,19 +16,28 @@
 
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
-<title>1stWebDesigner PHP Template</title>
+<title>my first PHP Template</title>
 
 </head>
 
 	<body>
 
-	<!-- inserted CREATE database code -->
+
+		<div id="wrapper">
+
+<?php include('includes/header.php'); ?>
+
+<?php include('includes/nav.php'); ?>
+
+<div id="content">
+
+	<!-- inserted create table code -->
 	<?php
 include 'config.php';
 include 'opendb.php';
 $query  = 'CREATE DATABASE eployee';
 $result = mysql_query($query);
-mysql_select_db('image_db') or die('Cannot select database');
+mysql_select_db("$dbname") or die('Cannot select database');
 $query = 'CREATE TABLE upload (
 id INT NOT NULL AUTO_INCREMENT,
 name VARCHAR(30) NOT NULL,
@@ -40,18 +49,11 @@ PRIMARY KEY(id)
 $result = mysql_query($query);
 include 'closedb.php';
 ?>
-	<!-- end of inserted Create database code -->
+	<!-- end of inserted create table code -->
 	
 	<!-- images uploader script -->
 	<?php include 'images-uploader.php'; ?>
 	<!-- END of images uploader script -->
-		<div id="wrapper">
-
-<?php include('includes/header.php'); ?>
-
-<?php include('includes/nav.php'); ?>
-
-<div id="content">
 
 <h1>Heading1</h1>
 <h2>Heading2</h2>
