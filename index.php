@@ -33,27 +33,20 @@
 
 	<!-- inserted create table code -->
 	<?php
-include 'config.php';
-include 'opendb.php';
-$query  = 'CREATE DATABASE eployee';
-$result = mysql_query($query);
-mysql_select_db("$dbname") or die('Cannot select database');
-$query = 'CREATE TABLE upload (
-id INT NOT NULL AUTO_INCREMENT,
-name VARCHAR(30) NOT NULL,
-type VARCHAR(30) NOT NULL,
-size INT NOT NULL,
-content MEDIUMBLOB NOT NULL,
-PRIMARY KEY(id)
-)';
-$result = mysql_query($query);
-include 'closedb.php';
+	include 'config.php';
+	include 'opendb.php';
+	include 'initdb.php';
+	include 'closedb.php';
 ?>
 	<!-- end of inserted create table code -->
 	
 	<!-- images uploader script -->
 	<?php include 'images-uploader.php'; ?>
 	<!-- END of images uploader script -->
+
+<ul>
+	<?php include 'images-list.php'; ?>
+</ul>
 
 <h1>Heading1</h1>
 <h2>Heading2</h2>
