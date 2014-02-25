@@ -1,1 +1,5 @@
-<?php echo "1300"; ?>
+<?php
+
+echo "i am a php file";
+
+?>
