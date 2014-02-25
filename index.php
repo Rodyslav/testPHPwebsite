@@ -1,5 +1,5 @@
 <?php
 
-echo "i am a php file";
+echo "i am a very nice php file :)";
 
 ?>
